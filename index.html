@@ -1,0 +1,344 @@
+<head>
+	<style>
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+li {
+  text-align: center;
+  min-width: 120px;
+  padding: 15px;
+}
+
+.large-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  color: #2c3e50;
+  line-height: 1;
+}
+
+.small-text {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 5px 0 0 0;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+li:hover .large-text {
+  color: #e74c3c;
+}
+
+li:hover .small-text {
+  color: #34495e;
+}
+
+@media (max-width: 600px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  li {
+    margin-bottom: 20px;
+  }
+
+}
+
+.title {
+	text-align: center;
+	padding-bottom: 60px;
+	padding-top: 0px;
+}
+.center {
+	text-align: center;
+}
+.published-games {
+	padding-top: 50px;
+}
+.game-one {
+	padding-top: 50px;
+}
+.game-two {
+	padding-top: 20px;
+	text-align: right;
+}
+.game-four {
+	text-align: right;
+}
+
+.starting {
+  font-size: 1.25rem; 
+  line-height: 1.6;
+  color: #34495e;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+  
+  animation: fadeIn 1s ease-in-out;
+}
+
+.starting::first-line {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2c3e50; 
+}
+
+.starting strong {
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .starting {
+    font-size: 1.1rem;
+    margin: 30px auto;
+  }
+  
+  .starting::first-line {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .starting {
+    font-size: 1rem;
+    margin: 20px auto;
+    text-align: left; 
+  }
+}
+
+
+.game-section {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  transform: translateY(50px);
+}
+
+.game-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.game-section.left {
+  transform: translateX(-100px);
+}
+
+.game-section.right {
+  transform: translateX(100px);
+}
+
+.game-section.animate.left,
+.game-section.animate.right {
+  transform: translateX(0);
+}
+
+.code-example {
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: #f8f9fa;
+}
+
+.code-header {
+    background: #2c3e50;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.code-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.language-tag {
+    background: #e74c3c;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+pre {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+    background: #f8f9fa;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+    color: #34495e;
+    tab-size: 4;
+}
+
+code {
+    font-family: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .code-example {
+        margin: 30px 15px;
+    }
+}
+	</style>
+</head>
+
+<body>
+	<div class="title">
+		<h1>EMERSON JORGENSEN</h1>
+	</div>
+<!-- Side by side list of stats -->
+<div>
+<ul>
+	<li><h1 class="large-text">160+</h1><h5 class="small-text">scripting projects</h5></li>
+	<li><h1 class="large-text">6</h1><h5 class="small-text">years of experience</h5></li>
+	<li><h1 class="large-text">5</h1><h5 class="small-text">programming languages</h5></li>
+	<li><h1 class="large-text">4</h1><h5 class="small-text">published games</h5></li>
+</ul>
+</div>
+
+
+<div class="rundown">
+<p class="starting">
+  Hi, I'm Emerson. I have experience in <strong>General Programming</strong>,
+	<strong>Game Development</strong>, 
+  <strong>Web Front and Backend</strong>, <strong>Video Editing</strong>, 
+	<strong>Computer Building</strong>, and <strong>Web Security</strong>. I have been programming since <strong>2019</strong>.
+</p>
+</div>
+
+<h1 class="center" style="padding-top: 40">Example Code</h1>
+<div class="code-example">
+    <div class="code-header">
+        <span class="language-tag">Python</span>
+        <h3>Code Snippet from 2020</h3>
+    </div>
+    <pre><code class="language-python"># Player class and functions 
+		class Player(object):
+    def __init__(self,hp = 100, food = 100, water = 100, o2 = 100):
+        self.HP = hp
+        self.inventory = Inventory()
+        self.food = food
+        self.water = water
+        self.o2 = o2
+    def __str__(self):
+        r = "HP: " + str(self.HP) + "\n" + "Food: " + str(self.food) + 
+				"\n" + "Water: " + str(self.water) + "\n" + "O2: "+str(self.o2)
+        return r
+    def damage(self, damage = 1, deathMessage = "You Died"):
+        self.HP -= damage
+        if self.HP &lt;= 0:
+            print(deathMessage)
+            self.die()
+    def die(self):
+        self.inventory.clear()
+        self.food = 100
+        self.water = 100
+        self.o2 = 100
+        self.HP = 100
+...
+</code></pre>
+</div>
+<div class="published-games">
+	
+	<div class="center">
+		<h1>Published Games</h1>
+	</div>
+
+<div class="game-one game-section left">
+    <h1>Hop To It</h1>
+    <img src="https://img.itch.zone/aW1hZ2UvNzM2MjE0LzIxOTE1MjQwLnBuZw==/original/fP5DjD.png" style="width: 600px;height:400px;">
+    <h4>Developed and published in 2020</h4>
+</div>
+<div class="game-two game-section right">
+    <h1>Smashy Ships</h1>
+    <img src="https://img.itch.zone/aW1hZ2UvMjI4NTI5My8xMzU0NDEzNy5wbmc=/original/5ubOkW.png" style="width: 600px;height:400px;">
+    <h4>Developed and published in 2023</h4>
+</div>
+<div class="game-three game-section left">
+    <h1>Just A Dream</h1>
+    <img src="https://img.itch.zone/aW1hZ2UvMTk1MTc0Ni8yMTkxOTg1OC5wbmc=/original/lHDhwX.png" style="width: 600px;height: 400px;">
+    <h4>Developed and published in 2023 during a 2 day challenge</h4>
+</div>
+<div class="game-four game-section right">
+    <h1>Just A Dream Remastered</h1>
+    <img src="https://img.itch.zone/aW1hZ2UvMjQ1Nzg0My8yMTkyMDA3OS5wbmc=/original/D73DX8.png" style="width: 600px;height: 400px;">
+    <h4>Developed and published in 2024</h4>
+</div>
+
+</div>
+
+<div class="web-dev" style="text-align: center">
+	<h1 style="padding-top: 80">Web Development</h1>
+	<h3>A web-app created in 2024 for a 2 week challenge</h3>
+	<img src=https://i.ibb.co/BKzp7JwH/2025-07-01-19-39.png>
+
+</div>
+<div class="code-example">
+    <div class="code-header">
+        <span class="language-tag">Node.js (javascript subtype)</span>
+        <h3>index.js</h3>
+    </div>
+    <pre><code class="language-node.js">// Handle API Request
+app.get('/tasks', (req, res) =&gt; {
+	fs.readFile(filepath, 'utf8', (err, data) =&gt; {
+		
+		if(err) {
+			return res.status(500).json({ message: 'Error reading data' });
+		}
+		
+		const jsonData = JSON.parse(data);
+    	res.json(jsonData);
+		
+	});
+});
+...
+</code></pre>
+</div>
+	
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const gameSections = document.querySelectorAll('.game-section');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  }, {
+    threshold: 0.1 // Trigger when 10% of element is visible
+  });
+
+  gameSections.forEach(section => {
+    observer.observe(section);
+  });
+});
+</script>
+
+</body>
