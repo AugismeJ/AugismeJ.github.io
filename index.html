@@ -330,6 +330,26 @@
 .icon[src*="itch.io"]:hover {
     filter: brightness(0) saturate(100%) invert(37%) sepia(91%) saturate(747%) hue-rotate(331deg) brightness(87%) contrast(93%);
 }
+.social-icon {
+    /* Ensure consistent alignment */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.social-icon span {
+    display: block;
+    margin-top: 8px;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+}
+
+.social-icon svg {
+    display: block;
+}
+
     </style>
 </head>
 <body>
